@@ -167,7 +167,6 @@ export default function Generate() {
                     </SignedIn>
                 </div>
             </nav>
-
             <div className="container mx-auto flex-grow py-16">
                 <motion.div
                     variants={zoomIn(0.1, 0.3)}
@@ -189,7 +188,7 @@ export default function Generate() {
                         value={text}
                         onChange={(e) => setText(e.target.value)}
                         className="w-full p-4 text-lg text-[#0d1321] bg-[#f0ebd8] font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-[#1d2d44] min-h-[250px]"
-                        placeholder="Enter text here..."
+                        placeholder="Enter text here&hellip;"
                         rows="6"
                     ></textarea>
                 </motion.div>
@@ -214,10 +213,9 @@ export default function Generate() {
                         <h2 className="font-black bg-clip-text text-transparent bg-gradient-to-t from-[#748cab] to-[#f0ebd8]  lg:text-[70px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mb-10 text-center hover:text-opacity-90">Collection Preview</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                             {flashcards.map((flashcard, index) => (
-                                <Tilt>
+                                <Tilt key={index}>
                                     <motion.div
-                                        key={index}
-                                        variants={fadeIn('right', 'spring', index * 0.5, 2)} // Similar to FeatureCard's animation
+                                        variants={fadeIn('right', 'spring', index * 0.5, 2)} 
                                         initial="hidden"
                                         animate="show"
                                         className="cursor-pointer p-5 rounded-[20px] shadow-card2 bg-[#1d2d44] hover:shadow-2xl "
@@ -252,7 +250,7 @@ export default function Generate() {
                                                         height: '100%',
                                                     }}
                                                 >
-                                                    <p className="text-lg font-semibold">{flashcard.front}</p>
+                                                    <p className="text-lg font-semibold">{flashcard.front.replace(/"/g, '&quot;')}</p>
                                                 </div>
                                                 <div
                                                     className="flip-card-back bg-[#1d2d44] text-[#f0ebd8] p-4 rounded-2xl shadow-lg flex justify-center items-center text-center mx-auto border border-gray-300 shadow-card2"
@@ -264,7 +262,7 @@ export default function Generate() {
                                                         transform: 'rotateY(180deg)',
                                                     }}
                                                 >
-                                                    <p className="text-lg font-semibold">{flashcard.back}</p>
+                                                    <p className="text-lg font-semibold">{flashcard.back.replace(/"/g, '&quot;')}</p>
                                                 </div>
                                             </div>
                                         </div>

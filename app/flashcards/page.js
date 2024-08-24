@@ -167,8 +167,9 @@ export default function Flashcard() {
               Confirm Deletion
             </h4>
             <p className="text-[#f0ebd8] text-center mb-6">
-              Are you sure you want to delete the flashcard collection "{selectedFlashcard?.name}"? This action cannot be reversed.
+              Are you sure you want to delete the flashcard collection &quot;{selectedFlashcard?.name}&quot;? This action cannot be reversed.
             </p>
+
             <div className="flex justify-end space-x-4">
               <button
                 onClick={handleCloseDialog}
