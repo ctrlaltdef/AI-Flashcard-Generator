@@ -6,7 +6,6 @@ import { Container, Typography, Box, AppBar, Button, Toolbar } from '@mui/materi
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { fadeInBounce, fadeIn } from '@/utils/motions';
-import Tilt from 'react-parallax-tilt';
 import { FaSignInAlt } from 'react-icons/fa';
 
 export default function SignUpPage() {
@@ -54,12 +53,10 @@ export default function SignUpPage() {
                     animate="show"
                     sx={{ backgroundColor: '#1d2d44', p: 4, borderRadius: '20px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.25)' }}
                 >
-                    <Typography variant="h4" sx={{ color: '#f0ebd8', mb: 2, fontWeight:500 }}>Sign Up</Typography>
-                    <Tilt>
+                    <Typography variant="h4" fontFamily={"serif"} sx={{ color: '#f0ebd8', mb: 2, fontWeight:500 }}>Sign Up</Typography>
                         <Box>
                             <SignUp />
                         </Box>
-                    </Tilt>
                 </Box>
             </Container>
         </div>
